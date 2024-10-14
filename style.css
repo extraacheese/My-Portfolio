@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f2833;
+    color: #66FCF1;
+    
+}
+
+nav a {
+    margin-left: 245px;
+    padding: 10px;
+    text-decoration: none;
+    color: #66FCF1;
+}
+
+main {
+    
+    padding: 60px;
+    max-width: flex;
+    margin: auto;
+    background-color: #0b0c10;
+    background-image: url(background.jpg);
+    color: #f0f0f0;
+}
+
+/* Project Cards */
+.projects {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.project-card {
+    width: 45%;
+    padding: 30px;
+    background-color: #66FCF1;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #0b0c10;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Button */
+.contact-button {
+    display: block;
+    width: 200px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.4s ease-in;
+}
+.contact-button:hover{
+    transform: scale(1.05) ;
+}
+
+/* Mode Toggle Switch */
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.mode-label {
+    margin-left: 10px;
+    
+}
+
+/* Hobby Content */
+.hobby-content {
+    display: none;
+}
+
+/* Image Carousel Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    margin: auto;
+}
+
+/* ul.results {
+    display: flex;
+    width: calc(80% - 2rem);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+} */
+
+/* not using this anymore beacuse of the smoothness new one provides */
+
+
+ul.results {
+    display: flex;
+    height: 100vh; /* Full height */
+    width: 95vw;  /* Full width 80 would also be fine but nahi accha lagrha */
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling */
+    list-style-type: none;
+    background: linear-gradient(45deg, #ff6f61, #6b8ede); /* Adds gradient color */
+}
+
+li.result {
+    padding: 0;
+}
+
+.results img {
+    max-width: 100%;
+    width: auto;
+    object-fit: cover;
+    transition: all 0.8s ease;
+}
+
+ul.results:is(:hover, :focus-within) img {
+    opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+    filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+:root {
+    --lerp-0: 1;
+    --lerp-1: 0.5787037;
+    --lerp-2: 0.2962963;
+    --lerp-3: 0.125;
+    --lerp-4: 0.037037;
+    --lerp-5: 0.0046296;
+    --lerp-6: 0;
+}
+
+.results a {
+    outline-offset: 4px;
+}
+
+li.result {
+    flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+    transition: flex 0.2s ease;
+}
+
+li.result:is(:hover, :focus-within) {
+    --active-lerp: var(--lerp-0);
+    z-index: 7;
+}
+
+li.result:has( + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li {
+    --active-lerp: var(--lerp-1);
+    z-index: 6;
+}
+
+li.result:has( + li + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li + li {
+    --active-lerp: var(--lerp-2);
+    z-index: 5;
+}
+
+li.result:has( + li + li + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li + li + li {
+    --active-lerp: var(--lerp-3);
+    z-index: 4;
+}
+
+li.result:has( + li + li + li + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li + li + li + li {
+    --active-lerp: var(--lerp-4);
+    z-index: 3;
+}
+
+li.result:has( + li + li + li + li + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li + li + li + li + li {
+    --active-lerp: var(--lerp-5);
+    z-index: 2;
+}
+
+li.result:has( + li + li + li + li + li + li:is(:hover, :focus-within)),
+li.result:is(:hover, :focus-within) + li + li + li + li + li + li {
+    --active-lerp: var(--lerp-6);
+    z-index: 1;
+}

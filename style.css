@@ -10,14 +10,14 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     background-color: #1f2833;
     color: #66FCF1;
     
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 245px;
     padding: 10px;
     text-decoration: none;
     color: #66FCF1;
